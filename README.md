@@ -1,12 +1,32 @@
 # get-account-authorization-details
 
-This is a boto3 script that runs `aws iam get-authorization-details` easily and stores the results in `account-alias.json`.
+This is a boto3 script that runs the AWS IAM [get-account-authorization-details](https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-authorization-details.html) command easily and stores the results in `account-alias.json`.
 
 There are a few nifty features built in:
 * You can specify `--profile all` to authenticate to AWS and run this command on every profile specified in your AWS credentials file.
 * Avoids rate limiting issues with AWS.
 
-I'm mostly publishing this because I've seen a few questions about proper boto3 usage of this API call recently, and it is easier to just point people to this repository :)
+I'm mostly publishing this because I've seen a few questions about proper boto3 usage of this API call recently. It is easier to just point people to this repository so they can use it as a reference.
+
+## Prerequisites
+
+Install Python dependencies. Choose your poison.
+
+* Venv
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+* Pipenv 
+
+```bash
+pipenv shell
+pipenv install
+./get-account-authorization-details.py
+```
 
 ## Usage
 
